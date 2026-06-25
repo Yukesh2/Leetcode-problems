@@ -1,0 +1,26 @@
+class Solution {
+public:
+     int *left;
+     int *right;
+     
+    
+     int searchInsert(vector<int>& nums, int target) {
+        sort(nums.begin(),nums.end());
+        left = &nums[0];
+        right = &nums[nums.size()-1];
+        
+        for(int i=0;i<nums.size();i++){
+            if(*left == target)
+                return i;
+                if(*left>target){
+                    return i;
+                }
+                
+                left++;
+
+        }
+            return left - &nums[0];
+        
+         
+    }
+};
